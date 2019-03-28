@@ -21,7 +21,7 @@ export default class Large extends Component {
 
     return(
       <div>
-        <h2>Current weather is {this.state.weather.description}</h2>
+        <h2>Current weather is {this.state.weather[0].description}</h2>
         <hr width="80%" />
         <div className="row-2">
           <div className="col center">
