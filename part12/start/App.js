@@ -17,7 +17,7 @@ class App extends Component {
           <Navbar/>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/weather" component={Weather} />
+            <PrivateRoute path="/weather" component={Weather} />
             <Route path="/callback" component={Callback} />
             <Route path="/unauthorized" component={Unauthorized} />
           </Switch>
