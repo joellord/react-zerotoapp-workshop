@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>From Zero to App</title>
+</head>
+<body>
+<div id="app"></div>
+
+<script src="./js/react.js"></script>
+<script src="./js/react-dom.js"></script>
+
+<script type="text/javascript">
+
+  let state = {
+    counter: 0,
+    actions: {
+      incrementCounter: () => {
+        setState({counter: state.counter + 1});
+      },
+      decrementCounter: () => {
+        setState({counter: state.counter - 1});
+      }
+    }
+  };
+
+  let Counter = React.createClass({
+    handleIncrement: function() {
+      this.props.actions.incrementCounter();
+    },
+    handleDecrement: function() {
+      this.props.actions.decrementCounter();
+    },
+    render: function() {
+      return (
+        React.createElement("div", {},
+          React.createElement("h1", {}, "The Mighty Counter"),
+          React.createElement("button", {onClick: this.handleIncrement}, "+"),
+          React.createElement("span", {}, state.counter),
+          React.createElement("button", {onClick: this.handleDecrement}, "-")
+        )
+      )
+    }
+  });
+
+  const setState = (changes) => {
+    state = Object.assign(state, changes);
+
+    ReactDOM.render(
+      React.createElement(Counter, state),
+      document.querySelector("#app")
+    );
+  };
+
+  setState(state);
+
+
+</script>
+
+</body>
+</html>
