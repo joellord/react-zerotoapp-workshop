@@ -51,12 +51,13 @@
 }
 
 .navbar {
-  width: 100%;
+  width: 98%;
   height: 60px;
   border: grey 1px solid;
   border-radius: 10px;
   margin: 15px;
   padding-top: 25px;
+  text-align: center;
 }
 
 .navbar .nav-title {
@@ -64,13 +65,12 @@
   font-weight: bold;
   text-align: left;
   display: inline-block;
-  width: 30%;
-
+  width: 20%;
 }
 
 .navbar .nav-links {
   display: inline-block;
-  width: 60%;
+  width: 40%;
   text-align: left;
 }
 
@@ -83,4 +83,10 @@
 .navbar li {
   display: inline-block;
   width: 60px;
+}
+
+.navbar .nav-actions {
+  text-align: right;
+  width: 30%;
+  display: inline-block;
 }

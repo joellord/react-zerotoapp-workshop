@@ -1,9 +1,19 @@
 import React, {Component} from "react";
+import {handleAuth} from "../utils/auth";
+import {withRouter} from "react-router-dom";
 
-export default class Callback extends Component {
+class Callback extends Component {
+  componentWillMount() {
+    handleAuth(() => {
+      this.props.history.push("/");
+    });
+  }
+
   render() {
     return (
       <div>Reticulating splines...</div>
     )
   }
 }
+
+export default withRouter(Callback);
