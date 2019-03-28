@@ -1,16 +1,8 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
-import {login, logout} from "../utils/auth";
-import store from "../utils/store";
+import {login, isAuthenticated, logout} from "../utils/auth";
 
 export default class Navbar extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = store.getGlobalState();
-    this.updateState = this.updateState.bind(this);
-  }
-
   handleLogin() {
     login();
   }
@@ -19,19 +11,8 @@ export default class Navbar extends Component {
     logout();
   }
 
-  componentWillMount() {
-    store.subscribe(this.updateState);
-  }
-
-  componentWillUnmount() {
-    store.unsubscribe(this.updateState);
-  }
-
-  updateState() {
-    this.setState(store.getGlobalState());
-  }
-
   render() {
+    console.log(isAuthenticated());
     return(
       <div className="navbar">
         <div className="nav-title">From Zero To App</div>
@@ -42,11 +23,11 @@ export default class Navbar extends Component {
           </ul>
         </div>
         <div className="nav-actions">
-          {!this.state.isLoggedIn &&
+          {!isAuthenticated() &&
           <button onClick={this.handleLogin}>Login</button>
           }
 
-          {this.state.isLoggedIn &&
+          {isAuthenticated() &&
           <button onClick={this.handleLogout}>Logout</button>
           }
         </div>
