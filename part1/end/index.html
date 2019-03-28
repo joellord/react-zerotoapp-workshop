@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>From Zero to App</title>
+</head>
+<body>
+<div id="app"></div>
+
+<script src="./js/react.js"></script>
+<script src="./js/react-dom.js"></script>
+
+<script type="text/javascript">
+
+  const searchEngines = [
+    {id: 1, name: "Google", link: "https://google.com"},
+    {id: 2, name: "Yahoo!", link: "https://yahoo.com"},
+    {id: 3, name: "Bing", link: "https://bing.com"},
+    {id: 4, name: "Duck Duck Go", link: "https://duckduckgo.com"}
+    ];
+
+  let rootEl = React.createElement("div", {},
+    React.createElement("h1", {}, "List of Search Engines"),
+    React.createElement("ul", {},
+      searchEngines.map(engine => {
+        return (
+          React.createElement("li", {},
+            React.createElement("a", {href: engine.link}, engine.name)
+          )
+        )
+      })
+    )
+  );
+
+  ReactDOM.render(rootEl, document.querySelector("#app"));
+
+</script>
+
+</body>
+</html>
