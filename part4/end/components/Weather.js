@@ -6,7 +6,9 @@ export default class Weather extends Component {
   render() {
     return (
       <div>
-        <Large city="Toronto, Canada" />
+        <h1>Weather for {this.props.city}</h1>
+
+        <Large />
 
         <br/>
 

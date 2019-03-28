@@ -4,7 +4,6 @@ export default class Large extends Component {
   render() {
     return(
       <div>
-        <h1>Weather for {this.props.city}</h1>
         <h2>Current weather is WEATHER</h2>
         <hr width="80%" />
         <div className="row-2">
