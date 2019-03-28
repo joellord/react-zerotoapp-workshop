@@ -5,8 +5,7 @@ let state = {};
 let initialState = {
   city: {name: "--Placeholder--"},
   list: [],
-  isLoggedIn: false,
-  searchValue: "Toronto, CA"
+  isLoggedIn: false
 };
 
 class Store extends Emitter {

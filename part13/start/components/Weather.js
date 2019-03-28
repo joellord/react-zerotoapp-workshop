@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import Large from "./Weather/Large";
 import Small from "./Weather/Small";
-import CityForm from "./CityForm";
 import {getWeatherData} from "../utils/weatherAPI";
 import store from "../utils/store";
 
@@ -31,8 +30,6 @@ export default class Weather extends Component {
     return (
       <div>
         <h1>Weather for {this.state.city.name}</h1>
-
-        <CityForm/>
 
         <Large {...this.state.list[0]} />
 
