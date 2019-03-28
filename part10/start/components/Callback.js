@@ -5,7 +5,7 @@ import {withRouter} from "react-router-dom";
 class Callback extends Component {
   componentWillMount() {
     handleAuth(() => {
-      this.props.history.push("/weather");
+      this.props.history.push("/");
     });
   }
 
