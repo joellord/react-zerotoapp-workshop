@@ -1,7 +1,13 @@
 import auth0 from "auth0-js";
-import credentials from "./credentials.json"
 import store from "./store";
 
+const credentials = {
+  domain: 'react-workshop.auth0.com',
+  clientID: 'dOCe36dXk8XdhJekm7wJKEkB19jqfRtg',
+  redirectUri: 'http://localhost:3000/callback',
+  responseType: 'token id_token',
+  scope: 'openid'
+};
 const Auth0 = new auth0.WebAuth(credentials);
 
 let tokens = {};
