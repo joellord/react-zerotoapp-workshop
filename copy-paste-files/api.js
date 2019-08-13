@@ -1,3 +1,3 @@
-const APIKEY = "e2af322c6fcd64d19d88e1153ae8892f";
-const city = "Indianapolis";
+const APIKEY = "2828523af4dba317783f978855fc3f26";
+const city = "Lincoln";
 const url = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&units=metric&cnt=7&appid=${APIKEY}`;
